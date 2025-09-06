@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyinfra-ansible-inventory-connector"
+version = "0.1.0"
+description = "Ansible inventory connector for pyinfra 3.x"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{ name="Julian Jacobsen", email="jj@compositiv.com" }]
+requires-python = ">=3.9"
+dependencies = [
+  "pyinfra>=3.0",
+  "ansible-core>=2.14",
+]
+
+[project.entry-points."pyinfra.connectors"]
+ansible = "pyinfra_ansible_inventory_connector.connector:AnsibleInventoryConnector"
